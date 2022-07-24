@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from lnks.tools/ by HTTrack Website Copier/3.x [XR&CO'2017], Sun, 24 Jul 2022 16:26:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="../gcore.jsdelivr.net/npm/bootstrap%404.4.1/dist/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous">
+<title>Shorter URL</title>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      cursor: default;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      vertical-align: center;
+      flex-wrap: wrap;
+      align-content: center;
+
+      color: #2a2b2c;
+      background-color: #ebedee;
+      overflow: hidden;
+    }
+    .card {
+      background-color: transparent;
+      width: 768px;
+    }
+    .card-text {
+      text-align: center;
+    }
+    .card-text > a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .card-text > a {
+      cursor: pointer;
+    }
+    .form-control {
+        cursor: auto;
+    }
+    @media (max-width: 769px) {
+      .card {
+        width: 80%;
+      }
+    }
+    @media (max-width: 420px) {
+      .card {
+        width: 95%;
+      }
+    }
+    @media (prefers-color-scheme: dark) { 
+      body {
+        color: #d9d9d9; 
+        background: #1b1b1b;
+      }
+      .card {
+        background-color: #252d38;
+      }
+    } 
+  </style>
+</head>
+<body>
+<div class="card">
+<h5 class="card-header">🎁 Shorten your URLs !</h5>
+<div class="card-body">
+<h5 class="card-title">Please enter the long URL to be shortened :</h5>
+<div class="input-group mb-3">
+<input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
+<div class="input-group-append">
+<button class="btn btn-primary" type="button" onclick='shorturl()' id="searchbtn">Shorten it</button>
+</div>
+</div>
+<div class="card-text">
+<a href="../external.html?link=https://github.com/xyTom/Url-Shorten-Worker/" target="_self">Fork me on GitHub</a>
+</div>
+<p id="notice"></p>
+</div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Result</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body" id="result">No result</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">Copy</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+<script src="../gcore.jsdelivr.net/npm/jquery%403.4.1/dist/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="../gcore.jsdelivr.net/npm/popper.js%401.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="../gcore.jsdelivr.net/npm/bootstrap%404.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+<script src="../gcore.jsdelivr.net/npm/url-shorten-worker%401.0.5/main.js" crossorigin="anonymous"></script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'72fe0519a8b8e9af',m:'R5YxQipTjDT1L39ZmF8_1SJ2WqbxXyQpMvEkbs9MeEw-1658680011-0-AbUXccD6Ulmq05ehFJ78kWynAX6KyewEw5VUP0SieIHCqGo67oSee3leS4Mzrn9HlBUw4gAbr2/A/ekxvklAz73if7JZKINCjC1w8dhSkziEwGzoyw4uje4Phrmxc0OG8A==',s:[0x146d3767f5,0x9e37485628],u:'/cdn-cgi/challenge-platform/h/b'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='cdn-cgi/challenge-platform/h/b/scripts/alpha/invisible5615.js'+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+
+<!-- Mirrored from lnks.tools/ by HTTrack Website Copier/3.x [XR&CO'2017], Sun, 24 Jul 2022 16:27:01 GMT -->
+</html>
